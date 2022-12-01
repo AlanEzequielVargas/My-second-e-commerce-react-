@@ -1,0 +1,11 @@
+
+.price-n-btn {
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
+.price-n-btn-in-product-detail {
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+}
