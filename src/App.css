@@ -100,3 +100,20 @@ Link {
 .user-icon {
    font-size: 80px;
 }
+@media (max-width: 992px){
+    .products-container {
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 4rem;
+    align-items: center;
+    }
+    
+}
+@media (min-width: 992px){
+   .products-container {
+   
+   gap: 1rem;
+   
+   }
+   
+}

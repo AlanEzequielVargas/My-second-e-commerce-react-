@@ -112,7 +112,7 @@ const ProductDetail = () => {
 						onSelect={handleSelect}
 						style={{
 							height: 500,
-							width: 500,
+							width: '100%',
 							margin: "auto",
 						}}
 					>
@@ -137,7 +137,7 @@ const ProductDetail = () => {
 					<p>{product?.description}</p>
 				</Col>
 
-				{/* RELATED PRODUCTS */}
+				
 				<Col
 					lg={4}
 					style={{
@@ -180,30 +180,49 @@ const ProductDetail = () => {
 
 					<Button
 						variant="success"
-						onClick={() => addToCart(inputValue)}
+						onClick={() => {
+                     if(localStorage.getItem('token')){
+                     addToCart(inputValue)
+                  }else {
+                     swal({
+                        title: "You have to be logged in to add products",
+                        text: 'Do you want to login?',
+                        icon: "error",
+                        
+                        buttons: ['No','Yes'],
+                     }).then(res => {if(res){
+                        navigate('/login')
+                     }});
+                  }}
+                     
+                  }
 					>
 						Add to Cart
 					</Button>
 				</Col>
 			</Row>
 
-			<Row className="mt-5" style={{ height: "50vh" }}>
+{/* RELATED PRODUCTS */}
+			<Row className="mt-5" style={{ height: "50vh"}}>
 				<h3>Related products:</h3>
-				<Col
+				<Col className='g-5'
 					style={{
 						display: "flex",
-						gap: 10,
 						overflowX: "overlay",
+                  whiteSpace: 'nowrap'
 					}}
 				>
 					{relatedProducts.map((prod) => (
 						<Card
 							key={prod.id}
 							style={{
-								width: "18rem",
-								height: "20rem",
+								minHeight: "320px",
+                        minWidth: '288px',
+                       maxHeight: "320px",
+                       maxWidth: '288px',
 								borderRadius: "10px",
 								padding: 10,
+                        margin: 10
 							}}
 						>
 							<Link
@@ -216,6 +235,7 @@ const ProductDetail = () => {
 									flexDirection: "column",
 									justifyContent: "center",
 									alignContent: "space-between",
+                           overflow: 'hidden'
 								}}
 							>
 								<div className="img-n-title">
@@ -230,17 +250,20 @@ const ProductDetail = () => {
 									/>
 
 									<Card.Title>
-										{prod.title} '
-										<span
-											style={{
+										{prod.title} 
+										
+										
+									</Card.Title>
+                           <Card.Subtitle style={{
 												color: "green",
 												fontWeight: "600",
-											}}
-										>
+											}}>
+										
+										
 											${prod.price}
-										</span>
-										'
-									</Card.Title>
+									
+										
+									</Card.Subtitle>
 								</div>
 							</Link>
 						</Card>

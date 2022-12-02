@@ -49,38 +49,22 @@ const Login = () => {
 			text: "napoleon-hill@gmail.com pass: napoleon1234",
 		});
 
-	return (
-		<>
+/* */
+/*  */
+{/* <Icon icon={faUser} css={"user-icon"} />
+ */}	return (
+		<div style={{height: '50vh' }}>
 			{token ? (
-				<div
-					style={{
-						width: 800,
-						height: 800,
-						margin: "13rem auto 0rem auto",
-					}}
-				>
-					<Card
-						style={{
-							textAlign: "center",
-							borderRadius: 15,
-							width: "30rem",
-							height: "30rem",
-							margin: "auto",
-							padding: 200,
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							alignItems: "center",
-							gap: 25,
-						}}
-					>
-						<Icon icon={faUser} css={"user-icon"} />
-						<Card.Title style={{ margin: 0, width: 200 }}>
-							{localStorage.getItem("userName")}
-						</Card.Title>
-						<Card.Body style={{ margin: 0, width: 200 }}>
-							<Card.Link
-								onClick={() => {
+				<Card style={{ margin: 'auto' , width: '18rem' , height: '15rem' , textAlign: 'center', padding: '1rem'}}>
+            <Card.Body>
+
+              <Icon icon={faUser} css={"user-icon"} /> 
+
+              <Card.Title>{localStorage.getItem("userName")} </Card.Title>
+              
+              
+              
+              <Card.Link style={{cursor: 'pointer'}} onClick={() => {
 									setToken(
 										localStorage.removeItem(
 											"token"
@@ -89,22 +73,14 @@ const Login = () => {
 									localStorage.removeItem(
 										"userName"
 									);
-								}}
-								style={{
-									cursor: "pointer",
-									margin: 0,
-									width: 200,
-								}}
-							>
-								Log out
-							</Card.Link>
-						</Card.Body>
-					</Card>
-				</div>
+								}}>Log out</Card.Link>
+              
+            </Card.Body>
+          </Card>
 			) : (
 				<div
 					style={{
-						width: 500,
+						maxWidth: 300,
 						height: 500,
 						margin: "13rem auto 0rem auto",
 					}}
@@ -145,7 +121,7 @@ const Login = () => {
 					</Form>
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

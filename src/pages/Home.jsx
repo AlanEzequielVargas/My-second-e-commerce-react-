@@ -7,7 +7,7 @@ import {
 	filterProductsThunk,
 } from "../store/slices/products.slice";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { Row, Col, Card, Button, Dropdown } from "react-bootstrap";
@@ -20,6 +20,8 @@ import { addProductToCartThunk } from "../store/slices/cart.splice";
 
 const Home = () => {
 	const [categories, setCategories] = useState([]);
+
+   const navigate = useNavigate()
 
 	const [inputSearch, setInputSearch] = useState("");
 
@@ -83,13 +85,13 @@ const Home = () => {
 				</Col>
 			</Row>
 
-			<Row>
-				<Col lg={3}>
+			<Row >
+				<Col lg={3} >
 					{/* Input range price */}
-					<Dropdown style={{ marginBottom: 20 }}>
+					<Dropdown style={{ marginBottom: 20}}>
 						<Dropdown.Toggle
-							style={{ width: 250 }}
-							variant="success"
+							style={{ width: '100%' , margin: 'auto'}}
+							variant="light"
 							id="dropdown-basic"
 						>
 							Price
@@ -111,14 +113,14 @@ const Home = () => {
 					{/* CATEGORIES */}
 					<Dropdown>
 						<Dropdown.Toggle
-							style={{ width: 250 }}
-							variant="success"
+							style={{ width: '100%' }}
+							variant="light"
 							id="dropdown-basic"
 						>
 							Categories
 						</Dropdown.Toggle>
 
-						<Dropdown.Menu style={{ width: 250 }}>
+						<Dropdown.Menu style={{ width: '100%' }}>
 							{categories.map((category) => (
 								<Dropdown.Item
 									key={category.id}
@@ -138,8 +140,8 @@ const Home = () => {
 				</Col>
 
 				{/* PRODUCTS */}
-				<Col>
-					<Row xs={1} md={3} className="g-4" style={{ gap: 20 }}>
+				<Col gap={3}>
+					<Row md={3} className='products-container' >
 						{prices.map((prod) => (
 							<Card
 								key={prod.id}
@@ -188,8 +190,21 @@ const Home = () => {
 										${prod.price}
 									</Card.Text>
 									<Button
-										onClick={() =>
-											addToCart(prod.id)
+										onClick={() => {
+                                 if(localStorage.getItem('token')){
+                                 addToCart(prod.id)
+                              }else {
+                                 swal({
+                                    title: "You have to be logged in to add products",
+                                    text: 'Do you want to login?',
+                                    icon: "error",
+                                    
+                                    buttons: ['No','Yes'],
+                                 }).then(res => {if(res){
+                                    navigate('/login')
+                                 }});
+                              }}
+											
 										}
 										variant="success"
 										style={{

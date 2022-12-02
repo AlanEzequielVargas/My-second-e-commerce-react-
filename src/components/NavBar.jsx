@@ -23,7 +23,7 @@ const NavBar = () => {
 			{/* NAV-BAR */}
 			<Navbar
 				className="nav-bar"
-				bg="primary"
+				bg="success"
 				expand="lg"
 				style={{ position: "fixed", width: "100%", zIndex: 3 }}
 			>

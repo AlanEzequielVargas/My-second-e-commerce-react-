@@ -23,7 +23,7 @@ function App() {
 				<br />
 				<br />
 				<br />
-				<Container className="mb-5" style={{minHeight: '100vh'}}>
+				<Container className="mb-5" style={{minHeight: '100vh' , width: '100%'}}>
 					<Routes>
 						<Route path="/" element={<Home />} />
 
