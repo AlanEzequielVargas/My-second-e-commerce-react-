@@ -54,7 +54,7 @@ const NavBar = () => {
 							</Nav.Link>
 						</Nav>
 
-						<div
+                  {localStorage.getItem('token') && <div
 							onClick={() => setShow(!show)}
 							style={{
 								width: 30,
@@ -74,7 +74,8 @@ const NavBar = () => {
 							>
 								{cart.length}
 							</p>
-						</div>
+						</div>}
+						
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>

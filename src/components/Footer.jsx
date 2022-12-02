@@ -11,7 +11,7 @@ const Footer = () => {
       
          
       
-      <footer className="text-center text-lg-start bg-white text-muted">
+      <footer className="text-center text-lg-start bg-white text-muted" style={{marginTop: 200}}>
       
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
        
