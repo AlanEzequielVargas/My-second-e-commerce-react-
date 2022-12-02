@@ -56,7 +56,6 @@ const ProductDetail = () => {
 		const existProduct = cart.find(
 			(prod) => prod.id === productToCart.id
 		);
-		
 
 		const productToCartT = {
 			id: product.id,
@@ -112,7 +111,7 @@ const ProductDetail = () => {
 						onSelect={handleSelect}
 						style={{
 							height: 500,
-							width: '100%',
+							width: "100%",
 							margin: "auto",
 						}}
 					>
@@ -137,7 +136,6 @@ const ProductDetail = () => {
 					<p>{product?.description}</p>
 				</Col>
 
-				
 				<Col
 					lg={4}
 					style={{
@@ -181,35 +179,37 @@ const ProductDetail = () => {
 					<Button
 						variant="success"
 						onClick={() => {
-                     if(localStorage.getItem('token')){
-                     addToCart(inputValue)
-                  }else {
-                     swal({
-                        title: "You have to be logged in to add products",
-                        text: 'Do you want to login?',
-                        icon: "error",
-                        
-                        buttons: ['No','Yes'],
-                     }).then(res => {if(res){
-                        navigate('/login')
-                     }});
-                  }}
-                     
-                  }
+							if (localStorage.getItem("token")) {
+								addToCart(inputValue);
+							} else {
+								swal({
+									title: "You have to be logged in to add products",
+									text: "Do you want to login?",
+									icon: "error",
+
+									buttons: ["No", "Yes"],
+								}).then((res) => {
+									if (res) {
+										navigate("/login");
+									}
+								});
+							}
+						}}
 					>
 						Add to Cart
 					</Button>
 				</Col>
 			</Row>
 
-{/* RELATED PRODUCTS */}
-			<Row className="mt-5" style={{ height: "50vh"}}>
+			{/* RELATED PRODUCTS */}
+			<Row className="mt-5" style={{ height: "50vh" }}>
 				<h3>Related products:</h3>
-				<Col className='g-5'
+				<Col
+					className="g-5"
 					style={{
 						display: "flex",
 						overflowX: "overlay",
-                  whiteSpace: 'nowrap'
+						whiteSpace: "nowrap",
 					}}
 				>
 					{relatedProducts.map((prod) => (
@@ -217,12 +217,12 @@ const ProductDetail = () => {
 							key={prod.id}
 							style={{
 								minHeight: "320px",
-                        minWidth: '288px',
-                       maxHeight: "320px",
-                       maxWidth: '288px',
+								minWidth: "288px",
+								maxHeight: "320px",
+								maxWidth: "288px",
 								borderRadius: "10px",
 								padding: 10,
-                        margin: 10
+								margin: 10,
 							}}
 						>
 							<Link
@@ -235,7 +235,7 @@ const ProductDetail = () => {
 									flexDirection: "column",
 									justifyContent: "center",
 									alignContent: "space-between",
-                           overflow: 'hidden'
+									overflow: "hidden",
 								}}
 							>
 								<div className="img-n-title">
@@ -250,19 +250,15 @@ const ProductDetail = () => {
 									/>
 
 									<Card.Title>
-										{prod.title} 
-										
-										
+										{prod.title}
 									</Card.Title>
-                           <Card.Subtitle style={{
-												color: "green",
-												fontWeight: "600",
-											}}>
-										
-										
-											${prod.price}
-									
-										
+									<Card.Subtitle
+										style={{
+											color: "green",
+											fontWeight: "600",
+										}}
+									>
+										${prod.price}
 									</Card.Subtitle>
 								</div>
 							</Link>

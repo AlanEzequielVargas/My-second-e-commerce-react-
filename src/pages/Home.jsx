@@ -21,7 +21,7 @@ import { addProductToCartThunk } from "../store/slices/cart.splice";
 const Home = () => {
 	const [categories, setCategories] = useState([]);
 
-   const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	const [inputSearch, setInputSearch] = useState("");
 
@@ -85,12 +85,12 @@ const Home = () => {
 				</Col>
 			</Row>
 
-			<Row >
-				<Col lg={3} >
+			<Row>
+				<Col lg={3}>
 					{/* Input range price */}
-					<Dropdown style={{ marginBottom: 20}}>
+					<Dropdown style={{ marginBottom: 20 }}>
 						<Dropdown.Toggle
-							style={{ width: '100%' , margin: 'auto'}}
+							style={{ width: "100%", margin: "auto" }}
 							variant="light"
 							id="dropdown-basic"
 						>
@@ -113,14 +113,14 @@ const Home = () => {
 					{/* CATEGORIES */}
 					<Dropdown>
 						<Dropdown.Toggle
-							style={{ width: '100%' }}
+							style={{ width: "100%" }}
 							variant="light"
 							id="dropdown-basic"
 						>
 							Categories
 						</Dropdown.Toggle>
 
-						<Dropdown.Menu style={{ width: '100%' }}>
+						<Dropdown.Menu style={{ width: "100%" }}>
 							{categories.map((category) => (
 								<Dropdown.Item
 									key={category.id}
@@ -141,7 +141,7 @@ const Home = () => {
 
 				{/* PRODUCTS */}
 				<Col gap={3}>
-					<Row md={3} className='products-container' >
+					<Row md={3} className="products-container">
 						{prices.map((prod) => (
 							<Card
 								key={prod.id}
@@ -191,21 +191,31 @@ const Home = () => {
 									</Card.Text>
 									<Button
 										onClick={() => {
-                                 if(localStorage.getItem('token')){
-                                 addToCart(prod.id)
-                              }else {
-                                 swal({
-                                    title: "You have to be logged in to add products",
-                                    text: 'Do you want to login?',
-                                    icon: "error",
-                                    
-                                    buttons: ['No','Yes'],
-                                 }).then(res => {if(res){
-                                    navigate('/login')
-                                 }});
-                              }}
-											
-										}
+											if (
+												localStorage.getItem(
+													"token"
+												)
+											) {
+												addToCart(prod.id);
+											} else {
+												swal({
+													title: "You have to be logged in to add products",
+													text: "Do you want to login?",
+													icon: "error",
+
+													buttons: [
+														"No",
+														"Yes",
+													],
+												}).then((res) => {
+													if (res) {
+														navigate(
+															"/login"
+														);
+													}
+												});
+											}
+										}}
 										variant="success"
 										style={{
 											width: 50,

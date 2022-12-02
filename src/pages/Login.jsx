@@ -49,34 +49,44 @@ const Login = () => {
 			text: "napoleon-hill@gmail.com pass: napoleon1234",
 		});
 
-/* */
-/*  */
-{/* <Icon icon={faUser} css={"user-icon"} />
- */}	return (
-		<div style={{height: '50vh' }}>
+	/* */
+	/*  */
+	{
+		/* <Icon icon={faUser} css={"user-icon"} />
+		 */
+	}
+	return (
+		<div style={{ height: "50vh" }}>
 			{token ? (
-				<Card style={{ margin: 'auto' , width: '18rem' , height: '15rem' , textAlign: 'center', padding: '1rem'}}>
-            <Card.Body>
+				<Card
+					style={{
+						margin: "auto",
+						width: "18rem",
+						height: "15rem",
+						textAlign: "center",
+						padding: "1rem",
+					}}
+				>
+					<Card.Body>
+						<Icon icon={faUser} css={"user-icon"} />
 
-              <Icon icon={faUser} css={"user-icon"} /> 
+						<Card.Title>
+							{localStorage.getItem("userName")}{" "}
+						</Card.Title>
 
-              <Card.Title>{localStorage.getItem("userName")} </Card.Title>
-              
-              
-              
-              <Card.Link style={{cursor: 'pointer'}} onClick={() => {
-									setToken(
-										localStorage.removeItem(
-											"token"
-										)
-									);
-									localStorage.removeItem(
-										"userName"
-									);
-								}}>Log out</Card.Link>
-              
-            </Card.Body>
-          </Card>
+						<Card.Link
+							style={{ cursor: "pointer" }}
+							onClick={() => {
+								setToken(
+									localStorage.removeItem("token")
+								);
+								localStorage.removeItem("userName");
+							}}
+						>
+							Log out
+						</Card.Link>
+					</Card.Body>
+				</Card>
 			) : (
 				<div
 					style={{

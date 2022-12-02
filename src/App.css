@@ -8,7 +8,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-   z-index: 5;
+	z-index: 5;
 }
 
 .lds-spinner {
@@ -91,29 +91,25 @@
 }
 Link {
 	color: #fff;
-} 
+}
 .icon-navbar-color {
-   color: white;
-   cursor: pointer;
-   font-size: 1.6rem;
+	color: white;
+	cursor: pointer;
+	font-size: 1.6rem;
 }
 .user-icon {
-   font-size: 80px;
+	font-size: 80px;
 }
-@media (max-width: 992px){
-    .products-container {
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 4rem;
-    align-items: center;
-    }
-    
+@media (max-width: 992px) {
+	.products-container {
+		justify-content: center;
+		gap: 1rem;
+		padding-top: 4rem;
+		align-items: center;
+	}
 }
-@media (min-width: 992px){
-   .products-container {
-   
-   gap: 1rem;
-   
-   }
-   
+@media (min-width: 992px) {
+	.products-container {
+		gap: 1rem;
+	}
 }

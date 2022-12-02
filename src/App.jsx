@@ -23,7 +23,10 @@ function App() {
 				<br />
 				<br />
 				<br />
-				<Container className="mb-5" style={{minHeight: '100vh' , width: '100%'}}>
+				<Container
+					className="mb-5"
+					style={{ minHeight: "100vh", width: "100%" }}
+				>
 					<Routes>
 						<Route path="/" element={<Home />} />
 
@@ -32,7 +35,7 @@ function App() {
 							element={<ProductDetail />}
 						/>
 						<Route path="/login" element={<Login />} />
-                  
+
 						<Route element={<ProtectedRoutes />}>
 							<Route
 								path="/purchases"
@@ -41,7 +44,7 @@ function App() {
 						</Route>
 					</Routes>
 				</Container>
-            <Footer/>
+				<Footer />
 			</HashRouter>
 		</div>
 	);
