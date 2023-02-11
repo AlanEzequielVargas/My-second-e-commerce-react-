@@ -18,7 +18,7 @@ const Cart = ({ show, handleClose }) => {
 	const cart = useSelector((state) => state.cart);
 
 	useEffect(() => {
-		dispatch(getCartProductsThunk());
+		localStorage.getItem("token") && dispatch(getCartProductsThunk());
 	}, []);
 
 	let totalPrice = 0;

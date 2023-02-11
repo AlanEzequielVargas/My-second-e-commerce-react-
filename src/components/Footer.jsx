@@ -5,8 +5,16 @@ import twitter from '../assets/twitter-icon.png'
 import linkedin from '../assets/linkedin-icon.png'
 import google from '../assets/google-icon.png'
 import github from '../assets/github-icon.png'
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const Footer = () => {
+
+
+     useEffect(() => {
+     
+     },[])
+
    return (
       
          
@@ -22,22 +30,22 @@ const Footer = () => {
       
       
           <div> 
-            <a href="" className="me-4 link-secondary">
+            <a href="#" className="me-4 link-secondary">
               <img src={facebook} alt="" style={{width: 50 , height: 50}}/>
             </a>
-            <a href="" className="me-4 link-secondary">
+            <a href="#" className="me-4 link-secondary">
               <img src={instagram} alt="" style={{width: 50 , height: 50}}/>
             </a>
-            <a href="" className="me-4 link-secondary">
+            <a href="#" className="me-4 link-secondary">
               <img src={twitter} alt="" style={{width: 50 , height: 50}}/>
             </a>
-            <a href="" className="me-4 link-secondary">
+            <a href="#" className="me-4 link-secondary">
               <img src={linkedin} alt="" style={{width: 50 , height: 50}}/>
             </a>
-            <a href="" className="me-4 link-secondary">
+            <a href="#" className="me-4 link-secondary">
               <img src={github} alt="" style={{width: 50 , height: 50}}/>
             </a>
-            <a href="" className="me-4 link-secondary">
+            <a href="#" className="me-4 link-secondary">
               <img src={google} alt="" style={{width: 50 , height: 50}}/>
             </a>
           </div>
@@ -68,6 +76,9 @@ const Footer = () => {
                 <h6 className="text-uppercase fw-bold mb-4">
                   Products
                 </h6>
+                <ul>
+                   
+                </ul>
                 <p>
                   <a href="#!" className="text-reset">Computers</a>
                 </p>

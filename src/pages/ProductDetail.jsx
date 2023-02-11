@@ -15,6 +15,7 @@ import {
 	updateProductCartThunk,
 } from "../store/slices/cart.splice";
 import swal from "sweetalert";
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetail = () => {
 	const { id } = useParams();
@@ -22,6 +23,9 @@ const ProductDetail = () => {
 	const dispatch = useDispatch();
 
 	const cart = useSelector((state) => state.cart);
+
+     const navigate = useNavigate();
+
 
 	useEffect(() => {
 		dispatch(getProductsThunk());
@@ -87,15 +91,15 @@ const ProductDetail = () => {
 
 	return (
 		<div>
-			<Nav variant="tabs" defaultActiveKey="/home">
+			<Nav variant="tabs" defaultActiveKey="/active">
 				<Nav.Item>
-					<Nav.Link href="/home" eventKey="link-1">
+					<Nav.Link as={Link} to={`/`} eventKey="link-1">
 						Products
 					</Nav.Link>
 				</Nav.Item>
 
 				<Nav.Item>
-					<Nav.Link href="/home">{product?.title}</Nav.Link>
+					<Nav.Link href='/active' as={Link} to={`/products/${product?.id}`}>{product?.title}</Nav.Link>
 				</Nav.Item>
 			</Nav>
 			{/* PRODUCT AND DETAILS */}
@@ -175,7 +179,7 @@ const ProductDetail = () => {
 							</Button>
 						</div>
 					</div>
-
+                         
 					<Button
 						variant="success"
 						onClick={() => {
@@ -186,7 +190,6 @@ const ProductDetail = () => {
 									title: "You have to be logged in to add products",
 									text: "Do you want to login?",
 									icon: "error",
-
 									buttons: ["No", "Yes"],
 								}).then((res) => {
 									if (res) {
