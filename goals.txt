@@ -1,0 +1,2 @@
+agregado de productos desde home no suma y da error en consola.
+

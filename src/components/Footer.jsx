@@ -31,22 +31,22 @@ const Footer = () => {
       
           <div> 
             <a href="#" className="me-4 link-secondary">
-              <img src={facebook} alt="" style={{width: 50 , height: 50}}/>
+              <img src={facebook} alt="facebook icon" style={{width: 50 , height: 50}}/>
             </a>
             <a href="#" className="me-4 link-secondary">
-              <img src={instagram} alt="" style={{width: 50 , height: 50}}/>
+              <img src={instagram} alt="instagram icon" style={{width: 50 , height: 50}}/>
             </a>
             <a href="#" className="me-4 link-secondary">
-              <img src={twitter} alt="" style={{width: 50 , height: 50}}/>
+              <img src={twitter} alt="twitter icon" style={{width: 50 , height: 50}}/>
+            </a>
+            <a href="https://www.linkedin.com/in/alan-ezequiel-vargas-263075229/" className="me-4 link-secondary">
+              <img src={linkedin} alt="linkedin icon" style={{width: 50 , height: 50}}/>
+            </a>
+            <a href="https://github.com/AlanEzequielVargas" className="me-4 link-secondary">
+              <img src={github} alt="github icon" style={{width: 50 , height: 50}}/>
             </a>
             <a href="#" className="me-4 link-secondary">
-              <img src={linkedin} alt="" style={{width: 50 , height: 50}}/>
-            </a>
-            <a href="#" className="me-4 link-secondary">
-              <img src={github} alt="" style={{width: 50 , height: 50}}/>
-            </a>
-            <a href="#" className="me-4 link-secondary">
-              <img src={google} alt="" style={{width: 50 , height: 50}}/>
+              <img src={google} alt="google icon" style={{width: 50 , height: 50}}/>
             </a>
           </div>
         
@@ -122,10 +122,10 @@ const Footer = () => {
                 <p><i className="fas fa-home me-3 text-secondary"></i> Rosario , Santa Fe , AR</p>
                 <p>
                   <i className="fas fa-envelope me-3 text-secondary"></i>
-                  alan@gmail.com
+                  alanv3533@gmail.com
                 </p>
-                <p><i className="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
-                <p><i className="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+                <p><i className="fas fa-phone me-3 text-secondary"></i> + 54 341 310-0950</p>
+                <p><i className="fas fa-print me-3 text-secondary"></i> + 54 341 684-5690</p>
               </div>
        
             </div>

@@ -34,9 +34,9 @@ function App() {
 							path="/products/:id"
 							element={<ProductDetail />}
 						/>
-						{!localStorage.getItem("token") && (
-							<Route path="/login" element={<Login />} />
-						)}
+						
+						<Route path="/login" element={<Login />} />
+						
 
 						<Route element={<ProtectedRoutes />}>
 							<Route

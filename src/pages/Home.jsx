@@ -88,7 +88,7 @@ const Home = () => {
 			<Row>
 				<Col lg={3}>
 					{/* Input range price */}
-					<Dropdown style={{ marginBottom: 20 }}>
+					<Dropdown style={{ marginBottom: 20 ,zIndex: "1"}}>
 						<Dropdown.Toggle
 							style={{ width: "100%", margin: "auto" }}
 							variant="light"
@@ -111,9 +111,9 @@ const Home = () => {
 						</Dropdown.Menu>
 					</Dropdown>
 					{/* CATEGORIES */}
-					<Dropdown>
+					<Dropdown style={{ zIndex: "0"}}>
 						<Dropdown.Toggle
-							style={{ width: "100%" }}
+							style={{ width: "100%"}}
 							variant="light"
 							id="dropdown-basic"
 						>

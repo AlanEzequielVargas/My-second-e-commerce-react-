@@ -54,28 +54,29 @@ const NavBar = () => {
 							</Nav.Link>
 						</Nav>
 
-                  {localStorage.getItem('token') && <div
-							onClick={() => setShow(!show)}
-							style={{
-								width: 30,
-								height: 30,
-								display: "flex",
-							}}
-						>
-							<Icon
-								icon={faCartShopping}
-								css={"icon-navbar-color"}
-							/>
-							<p
+						{localStorage.getItem("token") && (
+							<div
+								onClick={() => setShow(!show)}
 								style={{
-									textAlign: "center",
-									color: "white",
+									width: 30,
+									height: 30,
+									display: "flex",
 								}}
 							>
-								{cart.length}
-							</p>
-						</div>}
-						
+								<Icon
+									icon={faCartShopping}
+									css={"icon-navbar-color"}
+								/>
+								<p
+									style={{
+										textAlign: "center",
+										color: "white",
+									}}
+								>
+									{cart.length}
+								</p>
+							</div>
+						)}
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
